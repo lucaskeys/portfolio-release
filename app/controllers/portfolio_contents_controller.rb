@@ -19,7 +19,7 @@ class PortfolioContentsController < ApplicationController
 			formatl.html { redirect_to portfolioContents_path, notice: "Your item is now live" }
 		else
 			format.html { render :new}
-			end
+		end
 		end
 	end
 
@@ -34,9 +34,17 @@ class PortfolioContentsController < ApplicationController
         format.html { redirect_to portfolioContents_path, notice: 'Blog was successfully updated.' }
       	else
         format.html { render :edit }
+    	end
       end
     end
-  end
+
+  	def destroy
+	  	@portfolio_item = PortfolioContent.find(params[:id])
+	  	@portfolio_item.destroy
+	  		respond_to do |format|
+	  			format.html { redirect_to portfolio_contents_url, notice: "Record was removed"}
+  	    	end
+  		end
 
 	private 
 	def portfolioContent_params
