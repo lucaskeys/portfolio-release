@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   resources :portfolio_contents, except: [:show]
-  get 'porfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  get 'angular-items', to: 'portfolio_contents#angular'
+  get 'porfolio/:id', to: 'portfolio_contents#show', as: 'portfolio_show'
   # uri    controller action   method for path
-  resources :blogs
+  resources :blogs do 
+  	member do 
+  		get :toggle_status
+  	end
+  end
 
 
   get 'about', to: 'pages#about'
