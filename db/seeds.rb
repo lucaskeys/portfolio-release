@@ -1,3 +1,8 @@
+3.times do |topic|
+	Topic.create!(title: "Topic #{topic}")
+end
+
+
 10.times do |blog|      
 
 	Blog.create!(title: "My Blog Post #{blog}", body: "8-bit tousled mustache,
@@ -5,7 +10,7 @@
 	ironic. Poke 8-bit bicycle rights squid green juice banjo, sriracha pabst VHS kinfolk. Fap migas
 	tofu typewriter offal bushwick. Raw denim farm-to-table fam wolf, fap vape plaid craft beer VHS
 	normcore fixie. Chillwave man braid microdosing woke, biodiesel fingerstache ugh la croix kitsch
-	shoreditch farm-to-table cronut organic. Fam vegan swag small batch.")
+	shoreditch farm-to-table cronut organic. Fam vegan swag small batch.", topic_id: Topic.last.id)
 end
 
 puts "10 blog posts creared"
@@ -16,8 +21,13 @@ end
 
 puts "5 skills created"
 
-9.times do |portfolio_item|
-	PortfolioContent.create!(title: "Portfolio Title #{portfolio_item}", subtitle: "Misc", body: "Raw denim farm-to-table fam wolf, fap vape plaid craft beer VHS
+1.times do |portfolio_item|
+	PortfolioContent.create!(title: "Portfolio Title #{portfolio_item}", subtitle: "Angular", body: "Raw denim farm-to-table fam wolf, fap vape plaid craft beer VHS
+	normcore fixie", main_image: "http://placehold.it/600x400", thumb_image: "http://placehold.it/350x200")
+end
+
+8.times do |portfolio_item|
+	PortfolioContent.create!(title: "Portfolio Title #{portfolio_item}", subtitle: "Ruby on Rails", body: "Raw denim farm-to-table fam wolf, fap vape plaid craft beer VHS
 	normcore fixie", main_image: "http://placehold.it/600x400", thumb_image: "http://placehold.it/350x200")
 end
 
