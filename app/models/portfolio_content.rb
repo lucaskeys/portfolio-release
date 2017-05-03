@@ -1,5 +1,8 @@
 class PortfolioContent < ApplicationRecord
 	has_many :technologies
+	accepts_nested_attributes_for :technologies, reject_if: lambda { |attrs| attrs['name'].blank? }
+	#this lets you set up an array of attributes - lets you send a collection of items associated with a parent model
+
 	include Placeholder
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
