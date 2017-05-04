@@ -20,7 +20,7 @@ class PortfolioContentsController < ApplicationController
 	end
 
 	def create
-		@portfolio_item = PortfolioContent.new(portfolioContent_params)
+		@portfolio_item = PortfolioContent.new(portfolio_content_params)
 
 		respond_to do |format|
 		if @portfolio_item.save
@@ -38,7 +38,7 @@ class PortfolioContentsController < ApplicationController
 	 def update
 	  	@portfolio_item = PortfolioContent.find(params[:id])
     	respond_to do |format|
-      	if @portfolio_item.update(portfolioContent_params)
+      	if @portfolio_item.update(portfolio_content_params)
         format.html { redirect_to portfolio_contents_path, notice: 'Blog was successfully updated.' }
       	else
         format.html { render :edit }
@@ -49,14 +49,18 @@ class PortfolioContentsController < ApplicationController
   	def destroy
 	  	@portfolio_item = PortfolioContent.find(params[:id])
 	  	@portfolio_item.destroy
-	  		respond_to do |format|
-	  			format.html { redirect_to portfolio_contents_url, notice: "Record was removed"}
-  	    	end
-  		end
+  			respond_to do |format|
+  			format.html { redirect_to portfolio_contents_url, notice: "Record was removed"}
+    	end
+	end
 
 	private 
-	def portfolioContent_params
-		params.require(:portfolio_content).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+	def portfolio_content_params
+		params.require(:portfolio_content).permit(:title, 
+												  :subtitle, 
+												  :body, 
+												  technologies_attributes: [:name]
+												  )
 		
 	end
 end
