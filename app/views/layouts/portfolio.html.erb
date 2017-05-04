@@ -18,11 +18,9 @@
    <%= render 'shared/nav', location: 'top' %>
 
    <%= login_helper %>
-   
+
     <%= yield %>
 
-    <% if session[:source] %>
-      <%= session[:source] %>
-    <% end %>
+  <%= source_helper("application") %>
   </body>
 </html>

@@ -23,8 +23,7 @@
 
     <%= login_helper %>
 
-    <% if session[:source] %>
-      <%= session[:source] %>
-    <% end %>
+    <%= source_helper("blog") %>
+
   </body>
 </html>
