@@ -6,8 +6,10 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
-    @page_title = "My Portfolio Blog"
+    @blogs = Blog.special_blogs
+    # puts "*" * 500
+    # @page_title = "My Portfolio Blog"
+    # puts "*" * 500
     # this will allow you to dynamically change the page title that will show on the tabs
   end
 

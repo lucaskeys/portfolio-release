@@ -1,4 +1,6 @@
 class PortfolioContentsController < ApplicationController
+	before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
+
 	layout 'portfolio'
 
 	def index
@@ -13,7 +15,6 @@ class PortfolioContentsController < ApplicationController
 	end
 
 	def show 
-		@portfolio_item = PortfolioContent.find(params[:id])
 	end
 
 	def new
@@ -34,11 +35,10 @@ class PortfolioContentsController < ApplicationController
 	end
 
 	def edit
-		@portfolio_item = PortfolioContent.find(params[:id])
 	end
 
 	 def update
-	  	@portfolio_item = PortfolioContent.find(params[:id])
+	
     	respond_to do |format|
       	if @portfolio_item.update(portfolio_content_params)
         format.html { redirect_to portfolio_contents_path, notice: 'Blog was successfully updated.' }
@@ -49,7 +49,7 @@ class PortfolioContentsController < ApplicationController
     end
 
   	def destroy
-	  	@portfolio_item = PortfolioContent.find(params[:id])
+	
 	  	@portfolio_item.destroy
   			respond_to do |format|
   			format.html { redirect_to portfolio_contents_url, notice: "Record was removed"}
@@ -64,5 +64,9 @@ class PortfolioContentsController < ApplicationController
 												  technologies_attributes: [:name]
 												  )
 		
+	end
+
+	def set_portfolio_item
+		@portfolio_item = PortfolioContent.find(params[:id])
 	end
 end
