@@ -18,4 +18,9 @@ module ApplicationHelper
 			content_tag(:p, greeting, class: "source-greeting")
 		end
 	end
+
+
+	def set_copyright
+	 	@copyright =  "&copy; #{Time.now.year} | <b>Luke Keysboe</b> All rights reservied".html_safe
+	end
 end
