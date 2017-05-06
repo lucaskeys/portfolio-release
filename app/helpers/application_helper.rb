@@ -1,5 +1,6 @@
 module ApplicationHelper
-	def login_helper style
+	def login_helper style = ''
+		# this fixes the bug of not passing in an arugment - ' is a default argument'
 	   if current_user.is_a?(GuestUser) 
 	   		(link_to "Sign Up", new_user_registration_path, class: style) + " ".html_safe +
 	   		(link_to "Login", new_user_session_path, class: style) 	   		
