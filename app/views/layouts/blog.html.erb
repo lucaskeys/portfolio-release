@@ -19,15 +19,17 @@
 
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
+        <h1 class="blog-title">Articles and Blog Posts</h1>
         <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+
+        <%= link_to 'Write new blog', new_blog_path if logged_in?(:site_admin) %>
       </div>
     </div>
 
     <div class="container">
 
     <div class="row">
-    
+
         <%= yield %>
 
         <div class="col-sm-3 offset-sm-1 blog-sidebar">
@@ -61,18 +63,13 @@
             </ol>
           </div>
         </div>
-        
-  
-
-        <footer class="blog-footer">
-
-        </footer>
-
-        <%= render 'shared/nav', location: 'bottom' %>
-        <!-- creating dynamc styles for partial (location) -->
-
-        <%= source_helper("blog") %>
       </div>
+        
+      <footer class="blog-footer">
+
+      </footer>
+
+      <%= source_helper("blog") %>
     </div>
 
   </body>
