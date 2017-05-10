@@ -1,6 +1,7 @@
 class PortfolioContent < ApplicationRecord
 	has_many :technologies
-	accepts_nested_attributes_for :technologies, reject_if: lambda { |attrs| attrs['name'].blank? }
+	accepts_nested_attributes_for :technologies, allow_destroy: true, reject_if: lambda { |attrs| attrs['name'].blank? }
+	# allow_destroy will allow you to delete the nested attributes of terhnologies
 	#this lets you set up an array of attributes - lets you send a collection of items associated with a parent model
 
 	include Placeholder
