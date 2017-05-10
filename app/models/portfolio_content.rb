@@ -4,7 +4,7 @@ class PortfolioContent < ApplicationRecord
 	#this lets you set up an array of attributes - lets you send a collection of items associated with a parent model
 
 	include Placeholder
-	validates_presence_of :title, :body, :main_image, :thumb_image
+	validates_presence_of :title, :body
 
 	mount_uploader :thumb_image, PortfolioContentUploader
 	mount_uploader :main_image, PortfolioContentUploader
@@ -19,11 +19,7 @@ class PortfolioContent < ApplicationRecord
 
 	scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby on Rails") }
 
-	after_initialize :set_defaults
+	# after_initialize :set_defaults
 	#after a portfolio item has been intialized
 
-	def set_defaults
-		# self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
-		# self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
-	end
 end
