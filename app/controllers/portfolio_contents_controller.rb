@@ -5,7 +5,7 @@ class PortfolioContentsController < ApplicationController
 	layout 'portfolio'
 
 	def index
-		@portfolio_items = PortfolioContent.all
+		@portfolio_items = PortfolioContent.by_position
 		# @portfolio_items = PortfolioContent.where(subtitle: "Ruby on Rails")
 		# @portfolio_items = PortfolioContent.angular
 		# @portfolio_items = PortfolioContent.ruby_on_rails_portfolio_items
