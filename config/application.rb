@@ -19,6 +19,6 @@ Bundler.require(*Rails.groups)
 
 module Portfolio
   class Application < Rails::Application
-  	
+  
   end
 end
