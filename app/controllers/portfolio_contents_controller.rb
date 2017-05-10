@@ -11,6 +11,15 @@ class PortfolioContentsController < ApplicationController
 		# @portfolio_items = PortfolioContent.ruby_on_rails_portfolio_items
 	end
 
+	def sort 
+		params[:order].each do |key, value|
+			PortfolioContent.find(value[:id]).update(position: value[:position])
+		end
+
+		render nothing: true
+		# bypasses regular process of looking for a view - says action is finished and does not need to render view
+	end
+
 	def angular
 		@angular_portfolio_items = PortfolioContent.angular
 	end

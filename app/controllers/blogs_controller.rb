@@ -31,7 +31,7 @@ class BlogsController < ApplicationController
   end
 
   # POST /blogs
-  # POST /blogs.json
+  # POST /blogs.json 
   def create
     @blog = Blog.new(blog_params)
 
