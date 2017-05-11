@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
 
   mount ActionCable.server => '/cable'
-
+  
   root to: 'pages#home'
 
 end
