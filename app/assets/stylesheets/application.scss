@@ -204,3 +204,22 @@ body {
  .app-footer {
   color: white;
  }
+ 
+ .app-card-container {
+  color: black;
+  opacity: .8;
+ }
+
+
+.app-card-container > .card {
+  padding: 40px;
+}
+
+.profile-img {
+  border: 1px solid grey
+}
+
+.card-block {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

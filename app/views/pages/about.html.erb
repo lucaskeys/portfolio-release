@@ -1,14 +1,54 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+	<div class="card">
+		<h1 class="">About Me</h1>
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<%= image_tag "nobody.jpg", width: 300, alt: "profile image", class: 'profile-img' %>
+			</div>
+			<div class="col-md-8">
+				<p>
+					<button
+						class="btn btn-primary"
+						type="button"
+						data-toggle="collapse"
+						data-target="#jobsHistory"
+						aria-expanded="false"
+						aria-controller="jobsHistory"
+					>
+						Work Experience
+					</button>
+					<button
+						class="btn btn-primary"
+						type="button"
+						data-toggle="collapse"
+						data-target="#education"
+						aria-expanded="false"
+						aria-controller="education"
+					>
+						Education
+					</button>
+				</p>
 
-<hr>
-
-<div class="row">
-	<div class="col-md-4">
-		<%= image_tag "nobody.jpg", width: 300, alt: "profile image" %>
-	</div>
-	<div class="col-md-8">
-		<p>
-			
-		</p>
+				<p>
+					<div class="collapse" id="jobsHistory">
+						<div class="card card-block">
+							Jobs 1
+						</div>
+						<div class="card card-block">
+							Jobs 2
+						</div>
+						<div class="card card-block">
+							Jobs 3
+						</div>
+					</div>
+					<div class="collapse" id="education">
+						<div class="card card-block">
+							college 1
+						</div>
+					</div>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
