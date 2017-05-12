@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( blogs.scss )
 Rails.application.config.assets.precompile += %w( portfolio_contents.scss )
+Rails.application.config.assets.path << Rails.root.join("app", "assets", "fonts")
