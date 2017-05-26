@@ -2,6 +2,9 @@
   <div class="container">
     <h1 class="blog-title">Articles and Blog Posts</h1>
     <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-    <%= link_to 'Write new blog', new_blog_path if logged_in?(:site_admin) %>
+    <span><%= link_to 'Write new blog', new_blog_path if logged_in?(:site_admin) %></span>
+    <span>
+    	<%= link_to "Topics", topics_path %> 
+    </span>
   </div>
 </div>
