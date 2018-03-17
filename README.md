@@ -1,6 +1,4 @@
-#Portfolio Rails Tutorial
-
-# README
+# Portfolio Rails Tutorial
 
 ##Setup/Installation
 
